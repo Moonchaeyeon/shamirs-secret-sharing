@@ -1,7 +1,7 @@
-const { randomBytes } = require('crypto')
+const CryptoJS = require("crypto-js");
 
 function random(size) {
-  const r = randomBytes(32 + size)
+  const r = CryptoJS.lib.WordArray.random(32 + size).toString();
   return r.slice(32)
 }
 
